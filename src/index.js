@@ -534,7 +534,7 @@ function init() {
          RectCircle(box, sphere) {
             const x = Math.max(box.x, Math.min(sphere.x, box.x + box.width));
             const y = Math.max(box.y, Math.min(sphere.y, box.y + box.height))
-            
+
             const distance = (x - sphere.x) * (x - sphere.x) +
                (y - sphere.y) * (y - sphere.y)
 
@@ -693,6 +693,10 @@ function init() {
       colorMode,
       figureAlign,
       figureBaseline,
+      figureMode($1, $2 = $1) {
+         figureAlign($1)
+         figureBaseline($2)
+      },
       loadImage(src) {
          const img = new Image()
          img.src = src
@@ -918,10 +922,6 @@ function init() {
          to(e, f)
          close
       },
-      rect: (...args) => {
-         [args[0], args[1]] = handlerFigureMode(...args)
-         canvasLocal.context2d.rect(...args)
-      },
       drawImage: (image, ...args) => {
          if (args.length == 2) {
             args = handlerFigureMode(...args, image.width, image.height)
@@ -930,15 +930,20 @@ function init() {
          }
          canvasLocal.context2d.drawImage(image, ...args)
       },
-      rectArc(x, y, w, h, $1 = 0, $2 = $1, $3 = $1, $4 = $2) {
+      rect(x, y, w, h, $1 = 0, $2 = $1, $3 = $1, $4 = $2) {
          [x, y] = handlerFigureMode(x, y, w, h)
-         const arc = [AutoToPx($1, w), AutoToPx($2, h), AutoToPx($3, w), AutoToPx($4, h)]
 
-         move(x, y)
-         arcTo(x + w, y, x + w, y + h - arc[1], arc[1])
-         arcTo(x + w, y + h, x + w - arc[2], y + h, arc[2])
-         arcTo(x, y + h, x, y + h - arc[3], arc[3])
-         arcTo(x, y, x + w - arc[0], y, arc[0])
+         if (arguments.length < 5) {
+            canvasLocal.context2d.rect(x, y, w, h)
+         } else {
+            const arc = [AutoToPx($1, w), AutoToPx($2, h), AutoToPx($3, w), AutoToPx($4, h)]
+
+            move(x, y)
+            arcTo(x + w, y, x + w, y + h - arc[1], arc[1])
+            arcTo(x + w, y + h, x + w - arc[2], y + h, arc[2])
+            arcTo(x, y + h, x, y + h - arc[3], arc[3])
+            arcTo(x, y, x + w - arc[0], y, arc[0])
+         }
       }
    })
 
