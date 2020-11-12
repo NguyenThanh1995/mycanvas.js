@@ -1,1 +1,1077 @@
-!function(t){var e={};function n(r){if(e[r])return e[r].exports;var i=e[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)n.d(r,i,function(e){return t[e]}.bind(null,i));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,n,r){"use strict";function i(t){return function(t){if(Array.isArray(t))return l(t)}(t)||function(t){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(t))return Array.from(t)}(t)||s(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function o(t,e){var n,r=Object.keys(t);return Object.getOwnPropertySymbols&&(n=Object.getOwnPropertySymbols(t),e&&(n=n.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),r.push.apply(r,n)),r}function a(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?o(Object(n),!0).forEach((function(e){u(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):o(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}function u(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function c(t,e){return function(t){if(Array.isArray(t))return t}(t)||function(t,e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(t)){var n=[],r=!0,i=!1,o=void 0;try{for(var a,u=t[Symbol.iterator]();!(r=(a=u.next()).done)&&(n.push(a.value),!e||n.length!==e);r=!0);}catch(t){i=!0,o=t}finally{try{r||null==u.return||u.return()}finally{if(i)throw o}}return n}}(t,e)||s(t,e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function s(t,e){if(t){if("string"==typeof t)return l(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);return"Object"===n&&t.constructor&&(n=t.constructor.name),"Map"===n||"Set"===n?Array.from(t):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?l(t,e):void 0}}function l(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}function h(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function f(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}function d(t,e,n){return e&&f(t.prototype,e),n&&f(t,n),t}function y(t){return(y="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}!function(){var t=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.msRequestAnimationFrame||window.oRequestAnimationFrame||function(t){setTimeout(t,100/6)},n="ontouchstart"in window||"onmsgesturechange"in window,r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(n){}function s(t){return t.replace(/^-ms-/,"ms-").replace(/-([a-z])/g,(function(t,e){return e.toUpperCase()}))}var l={over:n?"touchstart":"mousedown",out:n?"touchend":"mouseup",move:n?"touchmove":"mousemove"},f=["","-webkit-","-moz-","-ms-","-o-","-khtml-"];["transition","animation"].forEach((function(t){f.forEach((function(e){if(void 0!==window["on"+t.replace(/-/g,"")+t+"end"])return["End","Run","Start","Cancel"].forEach((function(n){l[t+n]=""===e?t+n.toLowerCase():e.replace(/-/g,"")+s("-"+t)+n})),l[t+"Prop"]=""===e?t:s(e+t),!1}))}));var g=function(){for(var t=0,e=f.length;t<e;t++)if(null!=document.documentElement.style[f[t]+"transform"])return f[t]+"transform"}(),m={windowWidth:{get:function(){return window.innerWidth||DOMe.clientWidth||DOM.body.clientWidth}},windowHeight:{get:function(){return window.innerHeight||DOMe.clientHeight||DOM.body.clientHeight}}};function v(t){for(var e=arguments.length,n=new Array(1<e?e-1:0),r=1;r<e;r++)n[r-1]=arguments[r];return n.forEach((function(e){for(var n in e)t[n]=e[n]})),t}function p(t){var e,n;return("function"!=typeof(e=t)||"number"==typeof e.nodeType)&&t!==window&&null!=(n=t)&&"object"==y(n)&&"length"in t}function w(t){return"number"==typeof t||"string"==typeof t&&!Number.isNaN(+t)}function x(t,e){return 0!==t&&(this.x=this.x%t),0!==e&&(this.y=this.y%e),this}function b(t,e,n){return 0!==t&&(this.x=this.x%t),0!==e&&(this.y=this.y%e),0!==n&&(this.z=this.z%n),this}var M=function(){function t(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:0,n=1<arguments.length&&void 0!==arguments[1]?arguments[1]:0,r=2<arguments.length&&void 0!==arguments[2]?arguments[2]:0;h(this,t);var i=[e,n,r];this.x=i[0],this.y=i[1],this.z=i[2]}return d(t,[{key:"set",value:function(e,n,r){return e instanceof t?(this.x=e.x||0,this.y=e.y||0,this.z=e.z||0):e instanceof Array?(this.x=e[0]||0,this.y=e[1]||0,this.z=e[2]||0):(this.x=e||0,this.y=n||0,this.z=r||0),this}},{key:"copy",value:function(){return new t([this.x,this.y,this.z])}},{key:"add",value:function(e,n,r){return e instanceof t?(this.x+=e.x||0,this.y+=e.y||0,this.z+=e.z||0):e instanceof Array?(this.x+=e[0]||0,this.y+=e[1]||0,this.z+=e[2]||0):(this.x+=e||0,this.y+=n||0,this.z+=r||0),this}},{key:"rem",value:function(e,n,r){var i,o,a,u,c;if(e instanceof t)Number.isFinite(e.x)&&Number.isFinite(e.y)&&Number.isFinite(e.z)&&(i=parseFloat(e.x),o=parseFloat(e.y),a=parseFloat(e.z),b.call(this,i,o,a));else if(e instanceof Array)e.every((function(t){return Number.isFinite(t)}))&&(2===e.length&&x.call(this,e[0],e[1]),3===e.length&&b.call(this,e[0],e[1],e[2]));else if(1===arguments.length){if(Number.isFinite(e)&&0!==e)return this.x=this.x%e,this.y=this.y%e,this.z=this.z%e,this}else 2===arguments.length?(u=[].slice.call(arguments)).every((function(t){return Number.isFinite(t)}))&&2===u.length&&x.call(this,u[0],u[1]):3!==arguments.length||(c=[].slice.call(arguments)).every((function(t){return Number.isFinite(t)}))&&3===c.length&&b.call(this,c[0],c[1],c[2])}},{key:"sub",value:function(e,n,r){return e instanceof t?(this.x-=e.x||0,this.y-=e.y||0,this.z-=e.z||0):e instanceof Array?(this.x-=e[0]||0,this.y-=e[1]||0,this.z-=e[2]||0):(this.x-=e||0,this.y-=n||0,this.z-=r||0),this}},{key:"mult",value:function(t){return"number"!=typeof t||t!==Infinite&&t!==-Infinite?console.warn("mult:","n is undefined or not a finite number"):(this.x*=t,this.y*=t,this.z*=t),this}},{key:"div",value:function(t){return"number"!=typeof t||t!==Infinite&&t!==-Infinite?console.warn("div:","n is undefined or not a finite number"):0===t?console.warn("div:","divide by 0"):(this.x/=t,this.y/=t,this.z/=t),this}},{key:"mag",value:function(){return Math.sqrt(this.magSq())}},{key:"magSq",value:function(){var t=this.x,e=this.y,n=this.z;return t*t+e*e+n*n}},{key:"dot",value:function(e,n,r){return e instanceof t?this.dot(e.x,e.y,e.z):this.x*(e||0)+this.y*(n||0)+this.z*(r||0)}},{key:"cross",value:function(e){return new t([this.y*e.z-this.z*e.y,this.z*e.x-this.x*e.z,this.x*e.y-this.y*e.x])}},{key:"normalize",value:function(){var t=this.mag();return 0!==t&&this.mult(1/t),this}},{key:"limit",value:function(t){var e=this.magSq();return t*t<e&&this.div(Math.sqrt(e)).mult(t),this}},{key:"setMag",value:function(t){return this.normalize().mult(t)}},{key:"heading",value:function(){return getDeg(Math.atan2(this.y,this.x))}},{key:"rotate",value:function(t){var e=P(this.heading()+t),n=this.mag();return this.x=Math.cos(e)*n,this.y=Math.sin(e)*n,this}},{key:"angleBetween",value:function(t){var e=this.dot(t)/(this.mag()*t.mag()),n=Math.acos(Math.min(1,Math.max(-1,e)));return n*=Math.sign(this.cross(t).z||1),getDeg(n)}},{key:"lerp",value:function(e,n,r,i){return e instanceof t?this.lerp(e.x,e.y,e.z,n):(this.x+=(e-this.x)*i||0,this.y+=(n-this.y)*i||0,this.z+=(r-this.z)*i||0,this)}},{key:"reflect",value:function(t){return t.normalize(),this.sub(t.mult(2*this.dot(t)))}},{key:"array",value:function(){return[this.x||0,this.y||0,this.z||0]}},{key:"equals",value:function(e,n,r){var i,o,a=e instanceof t?(i=e.x||0,o=e.y||0,e.z||0):e instanceof Array?(i=e[0]||0,o=e[1]||0,e[2]||0):(i=e||0,o=n||0,r||0);return this.x===i&&this.y===o&&this.z===a}},{key:"toString",value:function(){return"Vector: ["+this.array().join(", ")+"]"}}]),t}();Object.defineProperties(window,m);var O=v((function t(e){/degrees|radians/i.test(e)&&(t._angleMode=e.toLowerCase())}),{_angleMode:"degress"}),z=v((function(t){z._mode=z._modes[t.toUpperCase()]}),{_mode:0,_modes:{LEFT:0,CENTER:1,RIGHT:2}}),T=v((function(t){T._mode=T._modes[t.toUpperCase()]}),{_mode:0,_modes:{TOP:0,MIDDLE:1,BOTTOM:2}});function C(t,e,n,r){switch(z._mode){case 1:t-=n/2;break;case 2:t-=n}switch(T._mode){case 1:e-=r/2;break;case 2:e-=r}return[t,e]}function P(t){return/degrees/i.test(O._angleMode)?t*Math.PI/180:t}var k=v((function t(e){/rgb|hsl|hue|hsb/i.test(e)&&(t._colorMode=e.toLowerCase())}),{_colorMode:"rgb"});function j(t){var e=c(t,4),n=e[0],r=void 0===n?0:n,i=e[1],o=void 0===i?r:i,a=e[2],u=void 0===a?o:a,s=e[3],l=void 0===s?1:s;return"#"==(r+"")[0]?r:"".concat(k._colorMode,"a(").concat(r,", ").concat(o,", ").concat(u,", ").concat(l,")")}var E=new(function(){function t(e){var n=this;h(this,t),u(this,"_$el",null),u(this,"_context2d",null),this.$el=document.createElement("canvas"),this.width=m.windowWidth.get(),this.height=m.windowHeight.get(),void 0!==e&&(this.$el=e),Object.defineProperties(window,{canvas:{get:function(){return n.$el},set:function(t){return n.$el=t}},context2d:{get:function(){return n.context2d}},width:{get:function(){return n.width},set:function(t){return n.width=t}},height:{get:function(){return n.height},set:function(t){return n.height=t}}})}return d(t,[{key:"$el",get:function(){return this._$el},set:function(t){if(!(t instanceof HTMLElement&&t+""=="[object HTMLCanvasElement]"))throw new Error("myCanvas.js: when setting the value to canvasLocal. $el must make sure it is a HTMLCanvasElement.");this._$el=t,this._context2d=this._$el.getContext("2d")}},{key:"context2d",get:function(){return this._context2d}},{key:"width",get:function(){return this.$el.width},set:function(t){this.$el.width=t}},{key:"height",get:function(){return this.$el.height},set:function(t){this.$el.height=t}}]),t}())(window.canvas);v(window,{preventTouch:!1,stopTouch:!1,touches:[],changedTouches:[],mouseX:NaN,mouseY:NaN,interact:!1,junction:{Rect:function(t,e){return t.x<=e.x+e.width&&t.x+t.width>=e.x&&t.y<=e.y+e.height&&t.y+t.height>=e.y},Circle:function(t,e){return Math.pow(e.x-t.x,2)+Math.pow(e.y-t.y,2)<Math.pow(t.radius+e.radius,2)},PointRect:function(t,e,n){return t.x<e&&t.x+t.width>e&&t.y<n&&t.y+t.height>n},PointCircle:function(t,e,n){return Math.pow(e-t.x,2)+Math.pow(n-t.y,2)<Math.pow(t.radius,2)},RectCircle:function(t,e){var n=Math.max(t.x,Math.min(e.x,t.x+t.width)),r=Math.max(t.y,Math.min(e.y,t.y+t.height));return(n-e.x)*(n-e.x)+(r-e.y)*(r-e.y)<Math.pow(e.radius,2)}},getTouchInfo:q,system:{get rmax(){return Math.max(E.width,E.height)},get rmin(){return Math.min(E.width,E.height)},offset:{get x(){return E.$el.getBoundingClientRect().left},get y(){return E.$el.getBoundingClienRect().top}},center:{get x(){return E.width/2},get y(){return E.height/2}}},createVector:function(t,e,n){return new M(t,e,n)},createMatrix:function(t){var e=document.createElement("div");e.style.opacity=0,e.style.position="fixed",e.style.top=e.style.left="-9e+99px",e.style[g]=t,document.documentElement.appendChild(e);var n=getComputedStyle(e)[g];return"none"==n&&(n="1, 0, 0, 1, 0, 0"),n=n.replace(/^(?:matrix3d|matrix)\(|\s|\)$/g,"").split(",").map((function(t){return+t})),document.documentElement.removeChild(e),n._isMatrix=!0,n}});for(var A,S,_={map:function(t,e,n,r,i){return(t-e)*(i-r)/(n-e)+r}},L=0,I=["font","textAlign","lineJoin","textBaseline","lineCap","globalAlpha","shadowBlur","shadowColor"],$=I.length;L<$;L++)!function(t,e){_[e[t]]=function(){return arguments.length?E.context2d[e[t]]=arguments.length<=0?void 0:arguments[0]:E.context2d[e[t]]}}(L,I);function D(){var t=font().split(" ");return 2===t.length?{size:t[0],family:t[1],weight:"normal"}:3===t.length?{size:t[1],family:t[2],weight:t[0].trim()}:void 0}function R(t,e){if("string"!=typeof t)return t+"";t=t.replace(/^\s+|\s+$/g,"");var n=parseFloat(t);switch((t.match(/[a-z%]+$/i)||[,"px"])[1]){case"px":return n;case"em":return parseFloat(F())*n;case"rem":return 16*parseFloat(F());case"vw":return windowWidth*n/100;case"vh":return windowHeight*n/100;case"vmin":return Math.min(windowWidth,windowHeight)*n/100;case"vmax":return Math.max(windowWidth,windowHeight)*n/100;case"%":return e/100*n;default:return n}}function F(t){var e=D();return void 0===t?parseFloat(e.size):(t=R(t),font([e.weight,t,e.family].join(" ")),parseFloat(t))}for(S in _.globalOperation=function(){return arguments.length?E.context2d.globalCompositeOperation=arguments.length<=0?void 0:arguments[0]:E.context2d.globalCompositeOperation},v(_,a(a(a(a(a(a(a({fontSize:F,fontFamily:function(t){var e=D();return void 0===t?e.family:(font([e.weight,e.size,t].join(" ")),t)},fontWeight:function(t){var e=D();return void 0===t?e.weight:(font([t,e.size,e.family].join(" ")),t)},angleMode:O,colorMode:k,figureAlign:z,figureBaseline:T,loadImage:function(t){var e=new Image;return e.src=t,new Promise((function(t,n){e.addEventListener("load",(function(){return t(e)})),e.addEventListener("error",(function(t){return n(t)}))}))},random:function(){for(var t=arguments.length,e=new Array(t),n=0;n<t;n++)e[n]=arguments[n];return 1==e.length?p(e[0])?e[0][Math.floor(Math.random()*e[0].length)]:Math.random()*e[0]:2==e.length?e[0]+Math.random()*(e[1]-e[0]):void 0},createCanvas:function(){return document.body.contains(E.$el)||document.body.appendChild(E.$el),canvas},findCanvas:function(t){var e=0<arguments.length&&void 0!==t?t:"canvas",n=document.querySelector(e);return E.$el=n},rotate:function(t){return arguments.length&&E.context2d.rotate(_.rotate._rotate=P(t)),_.rotate._rotate}},function(){for(var t={},e=0,n=["stroke","fill"],r=n.length;e<r;e++)!function(e,n){t[n[e]]=function(){for(var t=arguments.length,r=new Array(t),i=0;i<t;i++)r[i]=arguments[i];E.context2d[n[e]+"Style"]=j(r),E.context2d[n[e]]()},t[s("get-"+n[e])]=function(){return E.context2d[n[e]]}}(e,n);return t}()),{},{lineWidth:function(t){return arguments.length&&(E.context2d.lineWidth=arguments.length<=0?void 0:t),E.context2d.lineWidth},miterLimit:function(t){return arguments.length&&("miter"!=lineJoin()&&lineJoin("miter"),E.context2d.miterLimit=arguments.length<=0?void 0:t),context2d.miterLimit},timeout:function(t){return setTimeout(arguments.callee.caller,t)},loop:function(e){t(e||arguments.callee.caller)},clear:function(t,e,n,r){var i=0<arguments.length&&void 0!==t?t:0,o=1<arguments.length&&void 0!==e?e:0,a=2<arguments.length&&void 0!==n?n:E.width,u=3<arguments.length&&void 0!==r?r:E.height;E.context2d.clearRect(i,o,a,u)},shadowOffset:function(t,e){if(0===arguments.length)return{x:E.context2d.shadowOffsetX,y:E.context2d.shadowOffsetY};w(arguments.length<=0?void 0:t)&&(context2d.shadowOffsetX=arguments.length<=0?void 0:t),w(arguments.length<=1?void 0:e)&&(context2d.shadowOffsetX=arguments.length<=1?void 0:e)},measureText:function(t){return E.context2d.measureText(t).width},background:function(){begin;for(var t=arguments.length,e=new Array(t),n=0;n<t;n++)e[n]=arguments[n];fill(j(e)),fillRect(0,0,E.width,E.height),close},range:function(t,e,n){n=n||1;var r=[],i=!1;if(void 0===e&&(e=t,t=1),"string"==typeof t&&(t=t.charCodeAt(0),e=e.charCodeAt(0),i=!0),t!==e&&Math.abs(e-t)<Math.abs(n))throw new Error("range(): step exceeds the specified range.");if(t<e)for(n<0&&(n*=-1);t<=e;)r.push(i?String.fromCharCode(t):t),t+=n;else for(0<n&&(n*=-1);e<=t;)r.push(i?String.fromCharCode(t):t),t+=n;return r},toDataURL:function(){var t;return(t=E.$el).toDataURL.apply(t,arguments)}},function(){var t,e={quadratic:"quadraticCurveTo",bezier:"bezierCurveTo",move:"moveTo",to:"lineTo",fillText:"fillText",strokeText:"strokeText",fillRect:"fillRect",strokeRect:"strokeRect",translate:"translate",scale:"scale",clip:"clip",arcTo:"arcTo",isPoint:"isPointInPath",createImageData:"createImageData",getImageData:"getImageData",putImageData:"putImageData",createPattern:"createPattern"},n={};for(t in e)!function(t){n[t]=function(){var n;return(n=E.context2d)[e[t]].apply(n,arguments)}}(t);return n}()),function(){var t={createRadial:"createRadialGradient",createLinear:"createLinearGradient"};CanvasGradient.prototype.add=function(){return this.addColorStop.apply(this,arguments),this};var e,n={};for(e in t)!function(e){n[e]=function(){var n;return(n=E.context2d)[t[e]].apply(n,i(args))}}(e);return n}()),function(){for(var t={},e=0,n=["transform","setTransform"],r=n.length;e<r;e++)!function(e,n){t[n[e]]=function(){for(var t,r=arguments.length,o=new Array(r),a=0;a<r;a++)o[a]=arguments[a];return(t=E.context2d)[n[e]].apply(t,i(o[0]._isMatrix?o[0]:o))}}(e,n);return t}()),{},{resetTransform:function(){return E.context2d.setTransform(1,0,0,1,0,0)}},(A={},["sin","cos","tan","tan2"].forEach((function(t){A[t]=function(e){return Math[t](P(e))},A["a"+t]=function(){return getDeg(Math["a"+t].apply(Math,arguments))}})),A.cot=A.tan2,A.acot=A.atan2,A)),(function(){for(var t={},e=0,n=["abs","floor","pow","round","sqrt","PI","ceil"],r=n.length;e<r;e++)t[n[e]]=Math[n[e]];return t})),{},{isTouch:n,hypot:"function"==typeof Math.hypot?Math.hypot:function(){for(var t,e=arguments.length,n=0,r=0;n<e;)r+=Math.pow((t=n++)<0||arguments.length<=t?void 0:arguments[t],2);return Math.sqrt(r)},pie:function(t,e,n,r,i,o){move(t,e),arc(t,e,n,r,i,o),to(t,e)},line:function(t,e,n,r){move(t,e),to(n,r)},arc:function(t,e,n,r,i,o){return E.context2d.arc(t,e,n,P(r)-Math.PI/2,P(i)-Math.PI/2,o)},ellipse:function(t,e,n,r,i,o,a){return E.context2d.ellipse(t,e,n,r,P(i)-Math.PI/2,P(o),void 0!==a&&a)},circle:function(t,e,n){return arc(t,e,n,0,360)},triange:function(t,e,n,r,i,o){begin,move(t,e),to(n,r),to(i,o),close},rect:function(){for(var t,e=arguments.length,n=new Array(e),r=0;r<e;r++)n[r]=arguments[r];var i=c(C.apply(void 0,n),2);n[0]=i[0],n[1]=i[1],(t=E.context2d).rect.apply(t,n)},drawImage:function(t){for(var e,n,r=arguments.length,o=new Array(1<r?r-1:0),a=1;a<r;a++)o[a-1]=arguments[a];2==o.length?o=C.apply(void 0,i(o).concat([t.width,t.height])):6==o.length&&(n=c(C.apply(void 0,i(o.slice(3))),2),o[5]=n[0],o[6]=n[1]),(e=E.context2d).drawImage.apply(e,[t].concat(i(o)))},rectArc:function(t,e,n,r,i,o,a,u){var s=4<arguments.length&&void 0!==i?i:0,l=5<arguments.length&&void 0!==o?o:s,h=6<arguments.length&&void 0!==a?a:s,f=7<arguments.length&&void 0!==u?u:l,d=c(C(t,e,n,r),2);t=d[0],e=d[1];var y=[R(s,n),R(l,r),R(h,n),R(f,r)];move(t,e),arcTo(t+n,e,t+n,e+r-y[1],y[1]),arcTo(t+n,e+r,t+n-y[2],e+r,y[2]),arcTo(t,e+r,t,e+r-y[3],y[3]),arcTo(t,e,t+n-y[0],e,y[0])}})),Object.defineProperties(window,a({},function(){var t,e={begin:"beginPath",close:"closePath",save:"save",restore:"restore"},n={};for(t in e)!function(t){n[t]={get:function(){E.context2d[e[t]]()}}}(t);return n}())),_)Object.defineProperty(window,S,{configurable:!0,value:_[S]});function q(t){for(var e,n=E.$el.getBoundingClientRect(),r=E.$el.scrollWidth/E.width||1,i=E.$el.scrollHeight/E.height||1,o=[],a=t.length,u=0;u<a;)e=t[u++],o.push({x:(e.clientX-n.left)/r,y:(e.clientY-n.top)/i,winX:e.clientX,winY:e.clientY,id:e.identifier});return o}function N(t){try{window.touches=q(t.touches||[e]),window.changedTouches=q(t.changedTouches||[e]),window.preventTouch&&t.preventDefault(),window.stopTouch&&t.stopPropagation(),(window.interact=!!window.touches.length)&&(window.mouseX=window.touches[0].x,window.mouseY=window.touches[0].y)}catch(t){throw t}}function H(){self.removeEventListener("load",H),document.removeEventListener("DOMContentLoaded",H),window.addEventListener(l.over,N,!!r&&{passive:!1}),window.addEventListener(l.move,N,!!r&&{passive:!1}),window.addEventListener(l.out,N,!!r&&{passive:!1}),new Promise((function(t,e){"function"==typeof preload?(preload=preload(),Array.isArray(preload)&&(preload=Promise.all(preload)),preload.then?preload.then(t).catch(e):t([])):t([])})).then((function(e){"function"==typeof setup&&setup(e),"function"==typeof draw&&function n(){draw(e),t(n)}()}))}"complete"===document.readyState?H():(self.addEventListener("load",H),document.addEventListener("DOMContentLoaded",H))}()}]);
+!function (){
+   const rqAnimate =
+      window.requestAnimationFrame || window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      function(e) {
+         setTimeout(e, 100 / 6)
+      },
+      isTouch = "ontouchstart" in window || "onmsgesturechange" in window
+
+   let supportPassive = false;
+   try {
+      let opts = Object.defineProperty({}, 'passive', {
+         get: function() {
+            supportPassive = true;
+         }
+      });
+      window.addEventListener("testPassive", null, opts);
+      window.removeEventListener("testPassive", null, opts);
+   } catch (e) {}
+
+   function camelCase(str) {
+      return str.replace(/^-ms-/, "ms-").replace(/-([a-z])/g, (str, char) => char.toUpperCase())
+   }
+   const fx = {
+      over: isTouch ? "touchstart" : "mousedown",
+      out: isTouch ? "touchend" : "mouseup",
+      move: isTouch ? "touchmove" : "mousemove"
+   }
+   const PREFIX = ["", "-webkit-", "-moz-", "-ms-", "-o-", "-khtml-"];
+["transition", "animation"].forEach(type => {
+      PREFIX.forEach(prefix => {
+         if (window["on" + type.replace(/-/g, "") + type + "end"] !== undefined) {
+         ["End", "Run", "Start", "Cancel"].forEach(after => {
+               fx[type + after] = prefix === "" ? type + after.toLowerCase() : (prefix.replace(/-/g, "") + camelCase("-" + type) + after)
+            })
+            return fx[type + "Prop"] = prefix === "" ? type : camelCase(prefix + type), false
+         }
+      })
+   })
+
+   const TRANSFORM_Prop = (() => {
+      for (let index = 0, length = PREFIX.length; index < length; index++) {
+         if (document.documentElement.style[PREFIX[index] + "transform"] != null) {
+            return PREFIX[index] + "transform"
+         }
+      }
+   })()
+
+
+
+   const windowSizePropertyes = {
+      windowWidth: {
+         get: () => window.innerWidth || DOMe.clientWidth || DOM.body.clientWidth
+      },
+      windowHeight: {
+         get: () => window.innerHeight || DOMe.clientHeight || DOM.body.clientHeight
+      }
+   }
+
+   function fnSpread(callback, ...args) {
+      args.forEach(item => {
+         for (const keyword in item) {
+            callback[keyword] = item[keyword]
+         }
+      })
+      return callback
+   }
+
+   function converToPx(string) {
+      if ((string + "").match(/\w/)) {
+         return string
+      } else {
+         return string + "px"
+      }
+   }
+
+   function isFunction(e) {
+      return typeof e == "function" && typeof e.nodeType != "number"
+   }
+
+   function isObject(obj) {
+      return obj != null && typeof obj == "object"
+   }
+
+   function isLikeArray(arr) {
+      if (isFunction(arr) || arr === window)
+         return false;
+      return isObject(arr) && "length" in arr
+   }
+
+   function isNumeric(n) {
+      return typeof n === "number" || (typeof n === "string" && !Number.isNaN(n - 0))
+   }
+
+   function calculateRemainder2D(xComponent, yComponent) {
+      if (xComponent !== 0) {
+         this.x = this.x % xComponent;
+      }
+
+      if (yComponent !== 0) {
+         this.y = this.y % yComponent;
+      }
+
+      return this;
+   };
+
+   function calculateRemainder3D(xComponent, yComponent, zComponent) {
+      if (xComponent !== 0) {
+         this.x = this.x % xComponent;
+      }
+
+      if (yComponent !== 0) {
+         this.y = this.y % yComponent;
+      }
+
+      if (zComponent !== 0) {
+         this.z = this.z % zComponent;
+      }
+
+      return this;
+   };
+
+
+   class Vector {
+      constructor(x = 0, y = 0, z = 0) {
+      [this.x, this.y, this.z] = [x, y, z]
+      }
+
+      set(x, y, z) {
+         if (x instanceof Vector) {
+            this.x = x.x || 0;
+            this.y = x.y || 0;
+            this.z = x.z || 0;
+            return this;
+         }
+
+         if (x instanceof Array) {
+            this.x = x[0] || 0;
+            this.y = x[1] || 0;
+            this.z = x[2] || 0;
+            return this;
+         }
+
+         this.x = x || 0;
+         this.y = y || 0;
+         this.z = z || 0;
+         return this;
+      }
+      copy() {
+         return new Vector([this.x, this.y, this.z])
+      }
+      add(x, y, z) {
+         if (x instanceof Vector) {
+            this.x += x.x || 0;
+            this.y += x.y || 0;
+            this.z += x.z || 0;
+            return this;
+         }
+
+         if (x instanceof Array) {
+            this.x += x[0] || 0;
+            this.y += x[1] || 0;
+            this.z += x[2] || 0;
+            return this;
+         }
+
+         this.x += x || 0;
+         this.y += y || 0;
+         this.z += z || 0;
+         return this;
+      }
+      rem(x, y, z) {
+         if (x instanceof Vector) {
+            if (Number.isFinite(x.x) && Number.isFinite(x.y) && Number.isFinite(x.z)) {
+               var xComponent = parseFloat(x.x);
+               var yComponent = parseFloat(x.y);
+               var zComponent = parseFloat(x.z);
+               calculateRemainder3D.call(this, xComponent, yComponent, zComponent);
+            }
+         } else if (x instanceof Array) {
+            if (x.every(function(element) {
+                  return Number.isFinite(element);
+               })) {
+               if (x.length === 2) {
+                  calculateRemainder2D.call(this, x[0], x[1]);
+               }
+
+               if (x.length === 3) {
+                  calculateRemainder3D.call(this, x[0], x[1], x[2]);
+               }
+            }
+         } else if (arguments.length === 1) {
+            if (Number.isFinite(arguments[0]) && arguments[0] !== 0) {
+               this.x = this.x % arguments[0];
+               this.y = this.y % arguments[0];
+               this.z = this.z % arguments[0];
+               return this;
+            }
+         } else if (arguments.length === 2) {
+            var vectorComponents = [].slice.call(arguments);
+
+            if (vectorComponents.every(function(element) {
+                  return Number.isFinite(element);
+               })) {
+               if (vectorComponents.length === 2) {
+                  calculateRemainder2D.call(this, vectorComponents[0], vectorComponents[1]);
+               }
+            }
+         } else if (arguments.length === 3) {
+            var _vectorComponents = [].slice.call(arguments);
+
+            if (_vectorComponents.every(function(element) {
+                  return Number.isFinite(element);
+               })) {
+               if (_vectorComponents.length === 3) {
+                  calculateRemainder3D.call(this, _vectorComponents[0], _vectorComponents[1], _vectorComponents[2]);
+               }
+            }
+         }
+      }
+      sub(x, y, z) {
+         if (x instanceof Vector) {
+            this.x -= x.x || 0;
+            this.y -= x.y || 0;
+            this.z -= x.z || 0;
+            return this;
+         }
+
+         if (x instanceof Array) {
+            this.x -= x[0] || 0;
+            this.y -= x[1] || 0;
+            this.z -= x[2] || 0;
+            return this;
+         }
+
+         this.x -= x || 0;
+         this.y -= y || 0;
+         this.z -= z || 0;
+         return this;
+      }
+      mult(n) {
+         if (!(typeof n === "number" && (n === Infinite || n === -Infinite))) {
+            console.warn("mult:", "n is undefined or not a finite number");
+            return this;
+         }
+
+         this.x *= n;
+         this.y *= n;
+         this.z *= n;
+         return this;
+      }
+      div(n) {
+         if (!(typeof n === "number" && (n === Infinite || n === -Infinite))) {
+            console.warn("div:", "n is undefined or not a finite number");
+            return this;
+         }
+
+         if (n === 0) {
+            console.warn("div:", "divide by 0");
+            return this;
+         }
+
+         this.x /= n;
+         this.y /= n;
+         this.z /= n;
+         return this;
+      }
+      mag() {
+         return Math.sqrt(this.magSq());
+      }
+      magSq() {
+         const { x, y, z } = this
+         return x * x + y * y + z * z;
+      }
+      dot(x, y, z) {
+         if (x instanceof Vector) {
+            return this.dot(x.x, x.y, x.z);
+         }
+
+         return this.x * (x || 0) + this.y * (y || 0) + this.z * (z || 0);
+      }
+      cross(v) {
+         var x = this.y * v.z - this.z * v.y;
+         var y = this.z * v.x - this.x * v.z;
+         var z = this.x * v.y - this.y * v.x;
+
+         return new Vector([x, y, z]);
+      }
+      normalize() {
+         const len = this.mag();
+         if (len !== 0) this.mult(1 / len);
+         return this;
+      }
+      limit(max) {
+         const mSq = this.magSq();
+
+         if (mSq > max * max) {
+            this.div(Math.sqrt(mSq)) //normalize it
+               .mult(max);
+         }
+
+         return this;
+      }
+      setMag(n) {
+         return this.normalize().mult(n);
+      }
+      heading() {
+         return getDeg(Math.atan2(this.y, this.x))
+      }
+      rotate(a) {
+         var newHeading = getRadius(this.heading() + a)
+         var mag = this.mag();
+         this.x = Math.cos(newHeading) * mag;
+         this.y = Math.sin(newHeading) * mag;
+         return this;
+      }
+      angleBetween(v) {
+         var dotmagmag = this.dot(v) / (this.mag() * v.mag());
+         var angle;
+         angle = Math.acos(Math.min(1, Math.max(-1, dotmagmag)));
+         angle = angle * Math.sign(this.cross(v).z || 1);
+
+         return getDeg(angle)
+      }
+      lerp(x, y, z, amt) {
+         if (x instanceof Vector) {
+            return this.lerp(x.x, x.y, x.z, y);
+         }
+
+         this.x += (x - this.x) * amt || 0;
+         this.y += (y - this.y) * amt || 0;
+         this.z += (z - this.z) * amt || 0;
+         return this;
+      }
+      reflect(surfaceNormal) {
+         surfaceNormal.normalize();
+         return this.sub(surfaceNormal.mult(2 * this.dot(surfaceNormal)));
+      }
+      array() {
+         return [this.x || 0, this.y || 0, this.z || 0];
+      }
+      equals(x, y, z) {
+         var a, b, c;
+
+         if (x instanceof Vector) {
+            a = x.x || 0;
+            b = x.y || 0;
+            c = x.z || 0;
+         } else if (x instanceof Array) {
+            a = x[0] || 0;
+            b = x[1] || 0;
+            c = x[2] || 0;
+         } else {
+            a = x || 0;
+            b = y || 0;
+            c = z || 0;
+         }
+
+         return this.x === a && this.y === b && this.z === c;
+      }
+      toString() {
+         return "Vector: [" + this.array().join(", ") + "]"
+      }
+   }
+
+   function createVector(x, y, z) {
+      return new Vector(x, y, z)
+   }
+
+
+
+
+
+
+
+
+
+
+
+   Object.defineProperties(window, windowSizePropertyes)
+
+   const angleMode = fnSpread(function angleMode(mode) {
+      if (/degrees|radial/i.test(mode)) {
+         angleMode._mode = mode.toLowerCase()
+      }
+   }, {
+      _mode: "degrees"
+   })
+   const figureAlign = fnSpread(mode => {
+      figureAlign._mode = figureAlign._modes[mode.toUpperCase()]
+   }, {
+      _mode: 0,
+      _modes: {
+         LEFT: 0,
+         CENTER: 1,
+         RIGHT: 2
+      }
+   })
+   const figureBaseline = fnSpread(mode => {
+      figureBaseline._mode = figureBaseline._modes[mode.toUpperCase()]
+   }, {
+      _mode: 0,
+      _modes: {
+         TOP: 0,
+         MIDDLE: 1,
+         BOTTOM: 2
+      }
+   })
+
+   function handlerFigureMode(x, y, w, h) {
+      switch (figureAlign._mode) {
+         case 1:
+            x -= w / 2
+            break
+         case 2:
+            x -= w
+      }
+      switch (figureBaseline._mode) {
+         case 1:
+            y -= h / 2
+            break
+         case 2:
+            y -= h
+      }
+      return [x, y]
+   }
+
+   function getRadius(v) {
+      return /degrees/i.test(angleMode._mode) ? v * Math.PI / 180 : v
+   }
+
+   function getDeg(e) {
+      return /degrees/i.test(angleMode._mode) ? e * 180 / Math.PI : e
+   }
+
+   const colorMode = fnSpread(function colorMode(mode) {
+      if (/rgb|hsl|hue|hsb/i.test(mode)) {
+         colorMode._colorMode = mode.toLowerCase()
+      }
+   }, {
+      _colorMode: "rgb"
+   })
+
+   function toRgbColor([red = 0, green = red, blue = green, alpha = 1]) {
+      if (isLikeArray(red)) {
+         return toRgbColor(red)
+      } else {
+         return (red + "").match(/^#|[a-z]/i) ? red : `${colorMode._colorMode}a(${red}, ${green}, ${blue}, ${alpha})`
+      }
+   }
+
+   const canvasLocal = new class {
+      _$el = null
+      _context2d = null
+      constructor(canvas) {
+         this.$el = document.createElement("canvas")
+
+         this.width = windowSizePropertyes.windowWidth.get()
+         this.height = windowSizePropertyes.windowHeight.get()
+
+         if (canvas !== undefined) {
+            this.$el = canvas
+         }
+
+         Object.defineProperties(window, {
+            canvas: {
+               get: () => this.$el,
+               set: el => this.$el = el
+            },
+            context2d: {
+               get: () => this.context2d
+            },
+            width: {
+               get: () => this.width,
+               set: val => this.width = val
+            },
+            height: {
+               get: () => this.height,
+               set: val => this.height = val
+            }
+         })
+
+      }
+      get $el() {
+         return this._$el
+      }
+      set $el(e) {
+         if (e instanceof HTMLElement && e + "" == "[object HTMLCanvasElement]") {
+            this._$el = e
+            this._context2d = this._$el.getContext("2d")
+         } else {
+            throw new Error("myCanvas.js: when setting the value to canvasLocal. $el must make sure it is a HTMLCanvasElement.")
+         }
+      }
+      get context2d() {
+         return this._context2d
+      }
+      get width() {
+         return this.$el.width
+      }
+      set width(e) {
+         this.$el.width = e
+      }
+      get height() {
+         return this.$el.height
+      }
+      set height(e) {
+         this.$el.height = e
+      }
+   }(window.canvas)
+
+   fnSpread(window, {
+      preventTouch: false,
+      stopTouch: false,
+      touches: [],
+      changedTouches: [],
+      mouseX: NaN,
+      mouseY: NaN,
+      interact: false,
+
+      // functions
+
+      junction: {
+         Rect(a, b) {
+            return (a.x <= b.x + b.width && a.x + a.width >= b.x) && (a.y <= b.y + b.height && a.y + a.height >= b.y);
+         },
+         Circle(e, f) {
+            return (f.x - e.x) ** 2 + (f.y - e.y) ** 2 < (e.radius + f.radius) ** 2
+         },
+         PointRect(e, x, y) {
+            return e.x < x && e.x + e.width > x && e.y < y && e.y + e.height > y
+         },
+         PointCircle(e, x, y) {
+            return (x - e.x) ** 2 + (y - e.y) ** 2 < e.radius ** 2
+         },
+         RectCircle(box, sphere) {
+            const x = Math.max(box.x, Math.min(sphere.x, box.x + box.width));
+            const y = Math.max(box.y, Math.min(sphere.y, box.y + box.height))
+
+            const distance = (x - sphere.x) * (x - sphere.x) +
+               (y - sphere.y) * (y - sphere.y)
+
+            return distance < sphere.radius ** 2
+         }
+      },
+      getTouchInfo,
+      system: {
+         get rmax() {
+            return Math.max(canvasLocal.width, canvasLocal.height)
+         },
+         get rmin() {
+            return Math.min(canvasLocal.width, canvasLocal.height)
+         },
+         offset: {
+            get x() {
+               return canvasLocal.$el.getBoundingClientRect().left
+            },
+            get y() {
+               return canvasLocal.$el.getBoundingClienRect().top
+            }
+         },
+         center: {
+            get x() {
+               return canvasLocal.width / 2
+            },
+            get y() {
+               return canvasLocal.height / 2
+            }
+         }
+      },
+      createVector,
+      createMatrix(css) {
+         const vnode = document.createElement("div")
+         vnode.style.opacity = 0
+         vnode.style.position = "fixed"
+         vnode.style.top = vnode.style.left = -9e99 + "px"
+         vnode.style[TRANSFORM_Prop] = css
+         document.documentElement.appendChild(vnode)
+         let transform = getComputedStyle(vnode)[TRANSFORM_Prop]
+
+         if (transform == "none")
+            transform = "1, 0, 0, 1, 0, 0"
+         transform = transform.replace(/^(?:matrix3d|matrix)\(|\s|\)$/g, "").split(",").map(e => +e)
+         document.documentElement.removeChild(vnode)
+         transform._isMatrix = true
+
+         return transform
+      }
+   })
+
+
+
+
+   const methods = { map: (a, b, c, d, e) => ((a - b) * (e - d)) / (c - b) + d }
+
+
+   for (let index = 0, propertyes = ["font", "textAlign", "lineJoin", "textBaseline", "lineCap", "globalAlpha", "shadowBlur", "shadowColor"], length = propertyes.length; index < length; index++) {
+      methods[propertyes[index]] = (...args) => {
+         if (args.length) {
+            return canvasLocal.context2d[propertyes[index]] = args[0]
+         } else {
+            return canvasLocal.context2d[propertyes[index]]
+         }
+      }
+   }
+   methods.globalOperation = (...args) => {
+      if (args.length) {
+         return canvasLocal.context2d.globalCompositeOperation = args[0]
+      } else {
+         return canvasLocal.context2d.globalCompositeOperation
+      }
+   }
+
+
+   function fontToArray() {
+      const _font = font().split(" ")
+      if (_font.length === 2)
+         return {
+            size: _font[0],
+            family: _font[1],
+            weight: "normal"
+         }
+      if (_font.length === 3)
+         return {
+            size: _font[1],
+            family: _font[2],
+            weight: _font[0].trim()
+         }
+   }
+
+   function AutoToPx(string, fi) {
+      if (typeof string == "string") {
+         string = string.replace(/^\s+|\s+$/g, "")
+         const number = parseFloat(string)
+         const dp = (string.match(/[a-z%]+$/i) || [, "px"])[1]
+
+         switch (dp) {
+            case "px":
+               return number
+            case "em":
+               return parseFloat(fontSize()) * number
+            case "rem":
+               return parseFloat(fontSize()) * 16
+            case "vw":
+               return windowWidth * number / 100
+            case "vh":
+               return windowHeight * number / 100
+            case "vmin":
+               return Math.min(windowWidth, windowHeight) * number / 100
+            case "vmax":
+               return Math.max(windowWidth, windowHeight) * number / 100
+            case "%":
+               return fi / 100 * number
+            default:
+               return number
+         }
+      } else {
+         return string + ""
+      }
+   }
+
+   function fontSize(size) {
+      const _font = fontToArray()
+      if (size === undefined)
+         return parseFloat(_font.size);
+      size = AutoToPx(size)
+      font([_font.weight, size, _font.family].join(" "))
+      return parseFloat(size)
+   }
+
+   function fontFamily(name) {
+      var _font = fontToArray()
+      if (name === undefined)
+         return _font.family;
+      font([_font.weight, _font.size, name].join(" "))
+      return name
+   }
+
+   function fontWeight(type) {
+      var _font = fontToArray()
+      if (type === undefined)
+         return _font.weight;
+      font([type, _font.size, _font.family].join(" "))
+      return type
+   }
+
+
+
+
+   fnSpread(methods, {
+      fontSize,
+      fontFamily,
+      fontWeight,
+      angleMode,
+      colorMode,
+      figureAlign,
+      figureBaseline,
+      figureMode($1, $2 = $1) {
+         figureAlign($1)
+         figureBaseline($2)
+      },
+      loadImage(src) {
+         const img = new Image()
+         img.src = src
+         return new Promise((resolve, reject) => {
+            img.addEventListener("load", () => resolve(img))
+            img.addEventListener("error", (err) => reject(err))
+         })
+      },
+      random(...args) {
+         if (args.length == 1)
+            return isLikeArray(args[0]) ? args[0][
+            Math.floor(Math.random() * args[0].length)
+         ] : Math.random() * args[0]
+
+         if (args.length == 2)
+            return args[0] + Math.random() * (args[1] - args[0])
+      },
+      createCanvas() {
+         if (!document.body.contains(canvasLocal.$el)) {
+            document.body.appendChild(canvasLocal.$el)
+         }
+         return canvas
+      },
+      findCanvas(select = "canvas") {
+         const canvasInDom = document.querySelector(select)
+         return canvasLocal.$el = canvasInDom
+      },
+      rotate(deg) {
+         if (arguments.length) {
+            canvasLocal.context2d.rotate(methods.rotate._rotate = getRadius(deg))
+         }
+         return methods.rotate._rotate
+      },
+      ...(() => {
+         const result = {}
+         for (let index = 0, propertyes = ["stroke", "fill"], length = propertyes.length; index < length; index++) {
+            result[propertyes[index]] = (...args) => {
+               args.length && (canvasLocal.context2d[propertyes[index] + "Style"] = toRgbColor(args))
+               canvasLocal.context2d[propertyes[index]]()
+            }
+            result[camelCase("get-" + propertyes[index])] = () => canvasLocal.context2d[propertyes[index]]
+         }
+         return result
+      })(),
+      lineWidth(...args) {
+         if (args.length) {
+            canvasLocal.context2d.lineWidth = args[0]
+         }
+         return canvasLocal.context2d.lineWidth
+      },
+      miterLimit(...args) {
+         if (args.length) {
+            if (lineJoin() != "miter") {
+               lineJoin("miter")
+            }
+            canvasLocal.context2d.miterLimit = args[0]
+         }
+         return context2d.miterLimit
+      },
+      timeout(timeout) {
+         return setTimeout(arguments.callee.caller, timeout)
+      },
+      loop(fn) {
+         rqAnimate(fn || arguments.callee.caller)
+      },
+      clear(x = 0, y = 0, w = canvasLocal.width, h = canvasLocal.height) {
+         canvasLocal.context2d.clearRect(x, y, w, h)
+      },
+      shadowOffset(...args) {
+         if (args.length === 0)
+            return {
+               x: canvasLocal.context2d.shadowOffsetX,
+               y: canvasLocal.context2d.shadowOffsetY
+            }
+
+         if (isNumeric(args[0]))
+            context2d.shadowOffsetX = args[0]
+         if (isNumeric(args[1]))
+            context2d.shadowOffsetX = args[1]
+      },
+      measureText: text => canvasLocal.context2d.measureText(text).width,
+      background(...args) {
+         begin
+         fill(...args)
+         fillRect(0, 0, canvasLocal.width, canvasLocal.height)
+         close
+      },
+      range($start, $end, $step) {
+         $step = $step || 1
+         var arr = [],
+            isChar = false;
+
+         if ($end === undefined)
+            $end = $start,
+            $start = 1;
+
+         if (typeof $start == "string") {
+            $start = $start.charCodeAt(0)
+            $end = $end.charCodeAt(0)
+            isChar = true
+         }
+
+         if ($start !== $end && (Math.abs($end - $start) < Math.abs($step)))
+            throw new Error("range(): step exceeds the specified range.");
+
+         if ($end > $start) {
+            $step < 0 && ($step *= -1)
+            while ($start <= $end) {
+               arr.push(isChar ? String.fromCharCode($start) : $start)
+               $start += $step
+            }
+         }
+         else {
+            $step > 0 && ($step *= -1)
+            while ($start >= $end) {
+               arr.push(isChar ? String.fromCharCode($start) : $start)
+               $start += $step
+            }
+         }
+
+         return arr;
+      },
+      toDataURL: (...args) => canvasLocal.$el.toDataURL(...args),
+      ...(() => {
+         const propertyes = {
+            quadratic: "quadraticCurveTo",
+            bezier: "bezierCurveTo",
+            move: "moveTo",
+            to: "lineTo",
+            fillText: "fillText",
+            strokeText: "strokeText",
+            fillRect: "fillRect",
+            strokeRect: "strokeRect",
+
+            // @begin methods in group transform
+            translate: "translate",
+            scale: "scale",
+            // @end
+
+            clip: "clip",
+            arcTo: "arcTo",
+            isPoint: "isPointInPath",
+            createImageData: "createImageData",
+            getImageData: "getImageData",
+            putImageData: "putImageData",
+            createPattern: "createPattern"
+         }
+         const result = {}
+
+         for (const property in propertyes) {
+            result[property] = (...args) => canvasLocal.context2d[propertyes[property]](...args)
+         }
+
+         return result
+      })(),
+      ...(() => {
+         const propertyes = {
+            createRadial: "createRadialGradient",
+            createLinear: "createLinearGradient"
+         }
+         CanvasGradient.prototype.add = function(...args) {
+            this.addColorStop(...args)
+            return this
+         }
+         const result = {}
+         for (const keyword in propertyes) {
+            result[keyword] = (...arg) => canvasLocal.context2d[propertyes[keyword]](...args)
+         }
+         return result
+      })(),
+      ...(() => {
+         const result = {}
+         for (let index = 0, propertyes = ["transform", "setTransform"], length = propertyes.length; index < length; index++) {
+            result[propertyes[index]] = (...args) => canvasLocal.context2d[propertyes[index]](...(args[0]._isMatrix ? args[0] : args))
+         }
+         return result
+      })(),
+      resetTransform: () => canvasLocal.context2d.setTransform(1, 0, 0, 1, 0, 0),
+      ...(() => {
+         const result = {};
+      ["sin", "cos", "tan", "tan2"].forEach(val => {
+            result[val] = deg => Math[val](getRadius(deg))
+            result["a" + val] = (...args) => getDeg(Math["a" + val](...args))
+         })
+
+         result.cot = result.tan2
+         result.acot = result.atan2
+
+         return result
+      })(),
+      ...(() => {
+         const result = {}
+         for (let index = 0, propertyes = ["abs", "floor", "pow", "round", "sqrt", "PI", "ceil"], length = propertyes.length; index < length; index++) {
+            result[propertyes[index]] = Math[propertyes[index]]
+         }
+         return result
+      })(),
+      isTouch,
+      hypot: typeof Math.hypot === "function" ? Math.hypot : (...args) => {
+         const len = args.length
+         let i = 0,
+            result = 0;
+         while (i < len)
+            result += Math.pow(args[i++], 2);
+         return Math.sqrt(result)
+      },
+      pie(x, y, r, d1, d2, a) {
+         move(x, y)
+         arc(x, y, r, d1, d2, a)
+         to(x, y)
+      },
+      line(c, t, e, i) {
+         move(c, t)
+         to(e, i)
+      },
+      arc: (c, t, e, i, n, o) => canvasLocal.context2d.arc(c, t, e, getRadius(i) - Math.PI / 2, getRadius(n) - Math.PI / 2, o),
+      ellipse: (c, t, e, i, n, o, r) => canvasLocal.context2d.ellipse(c, t, e, i, getRadius(n) - Math.PI / 2, getRadius(o), r === undefined ? !1 : r),
+      circle: (x, y, r) => arc(x, y, r, 0, 360),
+      triange(a, b, c, d, e, f) {
+         begin
+         move(a, b)
+         to(c, d)
+         to(e, f)
+         close
+      },
+      drawImage: (image, ...args) => {
+         if (args.length == 2) {
+            args = handlerFigureMode(...args, image.width, image.height)
+         } else if (args.length == 6) {
+            [args[5], args[6]] = handlerFigureMode(...args.slice(3))
+         }
+         canvasLocal.context2d.drawImage(image, ...args)
+      },
+      rect(x, y, w, h, $1 = 0, $2 = $1, $3 = $1, $4 = $2) {
+         [x, y] = handlerFigureMode(x, y, w, h)
+
+         if (arguments.length < 5) {
+            canvasLocal.context2d.rect(x, y, w, h)
+         } else {
+            const arc = [AutoToPx($1, w), AutoToPx($2, h), AutoToPx($3, w), AutoToPx($4, h)]
+            move(x, y)
+            arcTo(x + w, y, x + w, y + h - arc[1], arc[1])
+            arcTo(x + w, y + h, x + w - arc[2], y + h, arc[2])
+            arcTo(x, y + h, x, y + h - arc[3], arc[3])
+            arcTo(x, y, x + w - arc[0], y, arc[0])
+         }
+      }
+   })
+
+
+   Object.defineProperties(window, {
+      ...(() => {
+         const propertyes = {
+            begin: "beginPath",
+            close: "closePath",
+            save: "save",
+            restore: "restore"
+         }
+         const result = {}
+
+         for (const keyword in propertyes) {
+            result[keyword] = {
+               get() {
+                  canvasLocal.context2d[propertyes[keyword]]()
+               }
+            }
+         }
+         return result
+      })()
+   })
+
+
+   for (const keyword in methods) {
+      Object.defineProperty(window, keyword, {
+         configurable: true,
+         value: methods[keyword]
+      })
+   }
+
+
+
+   // setup events
+
+   function getTouchInfo(touches) {
+      const rect = canvasLocal.$el.getBoundingClientRect();
+      const sx = canvasLocal.$el.scrollWidth / canvasLocal.width || 1;
+      const sy = canvasLocal.$el.scrollHeight / canvasLocal.height || 1;
+      const _touches = [],
+         length = touches.length
+      let i = 0,
+         touch
+      while (i < length) {
+         touch = touches[i++]
+         _touches.push({
+            x: (touch.clientX - rect.left) / sx,
+            y: (touch.clientY - rect.top) / sy,
+            winX: touch.clientX,
+            winY: touch.clientY,
+            id: touch.identifier
+         })
+      }
+      return _touches
+   }
+
+
+   function handlerEvent(event) {
+      try {
+         window.touches = getTouchInfo(event.touches || [e])
+         window.changedTouches = getTouchInfo(event.changedTouches || [e])
+         window.preventTouch && event.preventDefault()
+         window.stopTouch && event.stopPropagation()
+
+
+         if (window.interact = !!window.touches.length) {
+            window.mouseX = window.touches[0].x
+            window.mouseY = window.touches[0].y
+         }
+      } catch (e) {
+         throw e
+      }
+
+   }
+
+   function init() {
+      window.addEventListener(fx.over, handlerEvent, supportPassive ? { passive: false } : false);
+      window.addEventListener(fx.move, handlerEvent, supportPassive ? { passive: false } : false);
+      window.addEventListener(fx.out, handlerEvent, supportPassive ? { passive: false } : false)
+   }
+
+
+
+   function handlerReady() {
+
+      self.removeEventListener("load", handlerReady)
+      document.removeEventListener("DOMContentLoaded", handlerReady)
+      init()
+      new Promise((resolve, reject) => {
+            if (typeof preload == "function") {
+               preload = preload()
+               if (Array.isArray(preload)) {
+                  preload = Promise.all(preload)
+               }
+               if (preload.then) {
+                  preload.then(resolve).catch(reject)
+               } else {
+                  resolve([])
+               }
+            } else {
+               resolve([])
+            }
+         })
+         .then(result => {
+            if (typeof setup == "function") {
+               setup(result)
+            }
+
+            function _draw() {
+               draw(result)
+               rqAnimate(_draw)
+            }
+            if (typeof draw == "function") {
+               _draw()
+            }
+         })
+   }
+   
+   if (document.readyState === "complete") {
+      handlerReady()
+   } else {
+      self.addEventListener("load", handlerReady)
+      document.addEventListener("DOMContentLoaded", handlerReady)
+   }
+
+}()
