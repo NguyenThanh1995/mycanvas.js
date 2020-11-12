@@ -1,4 +1,4 @@
-function init() {
+!function (){
    const rqAnimate =
       window.requestAnimationFrame || window.webkitRequestAnimationFrame ||
       window.mozRequestAnimationFrame ||
@@ -382,11 +382,11 @@ function init() {
    Object.defineProperties(window, windowSizePropertyes)
 
    const angleMode = fnSpread(function angleMode(mode) {
-      if (/degrees|radians/i.test(mode)) {
-         angleMode._angleMode = mode.toLowerCase()
+      if (/degrees|radial/i.test(mode)) {
+         angleMode._mode = mode.toLowerCase()
       }
    }, {
-      _angleMode: "degress"
+      _mode: "degrees"
    })
    const figureAlign = fnSpread(mode => {
       figureAlign._mode = figureAlign._modes[mode.toUpperCase()]
@@ -428,11 +428,11 @@ function init() {
    }
 
    function getRadius(v) {
-      return /degrees/i.test(angleMode._angleMode) ? v * Math.PI / 180 : v
+      return /degrees/i.test(angleMode._mode) ? v * Math.PI / 180 : v
    }
 
-   function getDegrees(e) {
-      return /degrees/i.test(angleMode._angleMode) ? e * 180 / Math.PI : e
+   function getDeg(e) {
+      return /degrees/i.test(angleMode._mode) ? e * 180 / Math.PI : e
    }
 
    const colorMode = fnSpread(function colorMode(mode) {
@@ -444,7 +444,11 @@ function init() {
    })
 
    function toRgbColor([red = 0, green = red, blue = green, alpha = 1]) {
-      return (red + "")[0] == "#" ? red : `${colorMode._colorMode}a(${red}, ${green}, ${blue}, ${alpha})`
+      if (isLikeArray(red)) {
+         return toRgbColor(red)
+      } else {
+         return (red + "").match(/^#|[a-z]/i) ? red : `${colorMode._colorMode}a(${red}, ${green}, ${blue}, ${alpha})`
+      }
    }
 
    const canvasLocal = new class {
@@ -734,7 +738,7 @@ function init() {
          const result = {}
          for (let index = 0, propertyes = ["stroke", "fill"], length = propertyes.length; index < length; index++) {
             result[propertyes[index]] = (...args) => {
-               canvasLocal.context2d[propertyes[index] + "Style"] = toRgbColor(args)
+               args.length && (canvasLocal.context2d[propertyes[index] + "Style"] = toRgbColor(args))
                canvasLocal.context2d[propertyes[index]]()
             }
             result[camelCase("get-" + propertyes[index])] = () => canvasLocal.context2d[propertyes[index]]
@@ -780,7 +784,7 @@ function init() {
       measureText: text => canvasLocal.context2d.measureText(text).width,
       background(...args) {
          begin
-         fill(toRgbColor(args))
+         fill(...args)
          fillRect(0, 0, canvasLocal.width, canvasLocal.height)
          close
       },
@@ -893,7 +897,7 @@ function init() {
             result[propertyes[index]] = Math[propertyes[index]]
          }
          return result
-      }),
+      })(),
       isTouch,
       hypot: typeof Math.hypot === "function" ? Math.hypot : (...args) => {
          const len = args.length
@@ -937,7 +941,6 @@ function init() {
             canvasLocal.context2d.rect(x, y, w, h)
          } else {
             const arc = [AutoToPx($1, w), AutoToPx($2, h), AutoToPx($3, w), AutoToPx($4, h)]
-
             move(x, y)
             arcTo(x + w, y, x + w, y + h - arc[1], arc[1])
             arcTo(x + w, y + h, x + w - arc[2], y + h, arc[2])
@@ -1031,7 +1034,6 @@ function init() {
 
    function handlerReady() {
 
-
       self.removeEventListener("load", handlerReady)
       document.removeEventListener("DOMContentLoaded", handlerReady)
       init()
@@ -1064,8 +1066,7 @@ function init() {
             }
          })
    }
-
-
+   
    if (document.readyState === "complete") {
       handlerReady()
    } else {
@@ -1073,6 +1074,4 @@ function init() {
       document.addEventListener("DOMContentLoaded", handlerReady)
    }
 
-}
-
-init()
+}() 
